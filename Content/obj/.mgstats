@@ -1,0 +1,3 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/llich/erstes_MonoGame/Content/button.png","C:/Users/llich/erstes_MonoGame/Content/bin/button.xnb","TextureProcessor","Texture2DContent",29223,5760085,0,7248638
+"C:/Users/llich/erstes_MonoGame/Content/ScoreFont.spritefont","C:/Users/llich/erstes_MonoGame/Content/bin/ScoreFont.xnb","FontDescriptionProcessor","SpriteFontContent",881,37913,0,3888061
