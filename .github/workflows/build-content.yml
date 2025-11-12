@@ -1,0 +1,34 @@
+name: Build MonoGame Content
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-content:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Install .NET SDK
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Restore tools
+      run: dotnet tool restore
+
+    - name: Build content
+      run: |
+        dotnet mgcb /@:"Content/Content.mgcb" `
+          /platform:DesktopGL `
+          /outputDir:"Content/bin/DesktopGL/Content" `
+          /intermediateDir:"Content/obj/DesktopGL/net8.0/Content" `
+          /workingDir:"Content"
+
+    - name: Upload built content
+      uses: actions/upload-artifact@v3
+      with:
+        name: xnb-content
+        path: Content/bin/DesktopGL/Content
