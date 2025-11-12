@@ -28,7 +28,7 @@ jobs:
           /workingDir:"Content"
 
     - name: Upload built content
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: xnb-content
         path: Content/bin/DesktopGL/Content
